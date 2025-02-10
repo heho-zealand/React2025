@@ -11,7 +11,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className="jumbotron">
+        <div className="mt-3 p-4 bg-dark text-white rounded">
           <h1>React Movies <img alt="Movie" src={MovieImg}></img> </h1>  
            This small App demonstrates communication between child-components using Input/Output
         </div> 
