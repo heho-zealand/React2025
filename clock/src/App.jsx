@@ -1,16 +1,13 @@
-import React, { Component } from 'react';
+import Clock from "./Clock";
 import Message from "./Message";
-import Clock from './Clock';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App"> 
-         <Message messagetext="Local time:"/>
-         <Clock />  
-      </div>
-    );
-  }
+function App() {
+  return (
+    <div>
+      <Message messageText= "Local Time" />
+      <Clock />
+    </div>
+  );
 }
 
 export default App;
