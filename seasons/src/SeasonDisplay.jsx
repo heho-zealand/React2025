@@ -1,5 +1,4 @@
 import './SeasonDisplay.css';
-import React from 'react';
 
 const seasonConfig = {
     summer: {
@@ -20,8 +19,8 @@ const getSeason = (lat, month) => {
     }
 };
 
-const SeasonDisplay = (props) => {
-    const season = getSeason(props.lat, new Date().getMonth());
+const SeasonDisplay = ({ lat }) => {
+    const season = getSeason(lat, new Date().getMonth());
     const {text, iconName} = seasonConfig[season];
    
     return (
