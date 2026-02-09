@@ -1,11 +1,11 @@
-import React from 'react';
+import {useState} from 'react';
 
-class SearchBar extends React.Component {
+const SearchBar = (props) => {
   //  onInputChange(event){
   //      console.log(event.target.value);
   //  }
 
-  state = { term:  ''};
+  const [term, setTerm] = useState('');
 
   /*
   onFormSubmit(event){
@@ -15,32 +15,30 @@ class SearchBar extends React.Component {
       //Anden løsning er at lave onFormSubmit om til en Arrow-function, der automatisk binder this til koden i funktionen  
     }
 */
-    onFormSubmit = (event) =>{
+    const onFormSubmit = (event) =>{
         event.preventDefault();
-        //console.log(this.state.term);
-
-        this.props.onSubmit(this.state.term);
+        //console.log(term);
+        props.onSubmit(term);
     }
 
 
-    render(){
-        return (
+    return (
         <div className="ui segment">
-            <form onSubmit={this.onFormSubmit} className="ui form">
+            <form onSubmit={onFormSubmit} className="ui form">
         {/* <form onSubmit={(event) => this.onFormSubmit(event)} className="ui form">  // alternativ hvis onFormSubmit ikke var en Arrow-function*/}
                 <div className="field">
                     <label>Image Search</label>
                 {/* <input type="text" onChange={this.onInputChange}/>  */}
                     <input 
                         type="text" 
-                        value={this.state.term}
-                        onChange={(e)=>this.setState({ term: e.target.value})}
+                        value={term}
+                        onChange={(e)=>setTerm(e.target.value)}
                     />
                 </div>
             </form>
         </div>
         );
-    }
+    
 }
 
 export default SearchBar;
