@@ -1,11 +1,17 @@
-import React from 'react';
+import {useState, useRef, useEffect} from 'react';
 
-class ImageCard extends React.Component {
-    state = {spans:0};
-    imageRef = React.createRef();
-    
-    componentDidMount() {
-        this.imageRef.current.addEventListener('load', this.setSpans)
+function ImageCard(props) {
+    const [spans, setSpans] = useState(0);
+    const imageRef = useRef();
+
+    useEffect(() => {
+        imageRef.current.addEventListener('load', () => {
+            const height = imageRef.current.clientHeight;
+            const spans = Math.ceil(height/10);
+            setSpans(spans);
+        });
+    }, []);
+
     }
 
     setSpans = () => {
