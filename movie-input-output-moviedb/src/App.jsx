@@ -14,8 +14,8 @@ function App() {
   const [selectedMovie, setSelectedMovie] = useState(null);
 
   const onSearchSubmit = async (term) => {
-
     //console.log(term);
+    
     const response = await axios.get('https://api.themoviedb.org/3/search/movie?query=' + term + '&api_key=81c50c197b83129dd4fc387ca6c8c323')
     //console.log(response.data.results.slice(0,10));
     setMovies(response.data.results.slice(0,10));
@@ -27,8 +27,7 @@ function App() {
   }
   
   return (
-    <>
-    
+    <> 
         <div className="p-4 bg-dark text-white">
           <h1>React Movies <img className="rounded" alt="Movie" src={MovieImg}></img> </h1>  
           <span className="d-flex align-items-center justify-content-between p-0">This small App demonstrates the use of theMovieDb API<SearchBar onSearchMovie={onSearchSubmit}/></span> 
