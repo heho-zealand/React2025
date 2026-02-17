@@ -1,8 +1,5 @@
-import React from 'react';
     
-const MoviePlot = ({movie}) => {
-    //console.log(movie.Plot);
-    //console.log(movie);
+function MoviePlot({movie}){
     if (movie){
         return ( 
             <div className="movieplot">

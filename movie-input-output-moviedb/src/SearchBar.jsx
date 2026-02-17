@@ -5,8 +5,6 @@ function SearchBar({onSearchMovie}) {
 
     const onFormSubmit = (event) => {
         event.preventDefault();
-        // console.log(this.state.term);
-
         onSearchMovie(term);
     }
 
@@ -15,8 +13,7 @@ function SearchBar({onSearchMovie}) {
                 <label >Search </label>
                 <input className="m-2" type="text" value={term} onChange={ (e) => setTerm(e.target.value)}/>       
             </form>
-        )
-    
+        )    
 }
 
 export default SearchBar;
